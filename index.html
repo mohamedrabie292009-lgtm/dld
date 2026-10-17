@@ -4,27 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DLD MASTER | Luxury Real Estate Dubai</title>
-    <!-- Leaflet CSS للخرائط -->
+    <!-- مكتبة الخرائط Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- مكتبة الأيقونات العالمية FontAwesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- خطوط عربية وأرقام لاتينية راقية -->
+    <!-- خطوط عربية ولاتينية أنيقة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:wght@600;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-pure-black: #050505;
-            --bg-card: #0e0e11;
-            --bg-card-hover: #16161c;
-            --gold-gradient: linear-gradient(135deg, #e6c875 0%, #d4af37 50%, #996515 100%);
-            --gold-primary: #d4af37;
+            --bg-main: #050507;
+            --bg-card: #0d0d12;
+            --bg-card-hover: #14141c;
+            --gold-gradient: linear-gradient(135deg, #f0d78c 0%, #d4af37 50%, #996515 100%);
+            --gold: #d4af37;
             --gold-light: #fae19c;
-            --gold-glow-soft: rgba(212, 175, 55, 0.25);
-            --gold-glow-strong: 0 0 25px rgba(212, 175, 55, 0.8), 0 0 50px rgba(243, 229, 171, 0.4);
-            --border-gold: rgba(212, 175, 55, 0.25);
-            --text-light: #ffffff;
-            --text-muted: #9ca3af;
+            --gold-glow: rgba(212, 175, 55, 0.35);
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --text: #ffffff;
+            --text-dim: #9ca3af;
         }
 
         * {
@@ -33,22 +31,24 @@
             padding: 0;
             font-family: 'Cairo', sans-serif;
             -webkit-user-select: none;
-            -ms-user-select: none;
             user-select: none;
         }
 
         body {
-            background-color: var(--bg-pure-black);
-            color: var(--text-light);
+            background-color: var(--bg-main);
+            color: var(--text);
             overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* نافبار فخم أسود مع خط ذهبي */
+        /* نافبار الموقع */
         nav {
-            background: rgba(5, 5, 5, 0.85);
-            backdrop-filter: blur(20px);
+            background: rgba(5, 5, 7, 0.95);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-gold);
-            padding: 1.1rem 2.5rem;
+            padding: 1.2rem 2.5rem;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -71,6 +71,7 @@
             font-size: 0.75rem;
             color: var(--gold-light);
             letter-spacing: 1.5px;
+            display: block;
         }
 
         .nav-links {
@@ -85,293 +86,30 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .nav-link:hover, .nav-link.active {
-            color: var(--gold-primary);
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            color: var(--gold);
         }
 
-        /* الأزرار الذهبية المشعة والمضيئة عند الضغط */
+        /* الأزرار الذهبية المضيئة عند الضغط */
         .btn-gold {
             background: var(--gold-gradient);
-            color: #050505;
+            color: #050507;
             font-weight: 800;
-            padding: 0.7rem 1.8rem;
-            border-radius: 35px;
+            padding: 0.65rem 1.8rem;
+            border-radius: 30px;
             border: 1px solid var(--gold-light);
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px var(--gold-glow-soft);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            gap: 8px;
+            box-shadow: 0 4px 15px var(--gold-glow);
+            transition: all 0.25s ease;
             outline: none;
         }
 
         .btn-gold:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-            color: #000;
-        }
-
-        /* توهج إشعاعي قوي ومضيء عند الضغط */
-        .btn-gold:active {
-            transform: scale(0.96);
-            box-shadow: var(--gold-glow-strong) !important;
-            filter: brightness(1.2);
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, #dc2626, #7f1d1d);
-            color: white;
-            border: 1px solid #ef4444;
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s;
-        }
-
-        .btn-danger:hover {
-            box-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
-        }
-
-        .btn-danger:active {
-            transform: scale(0.95);
-        }
-
-        /* قسم الفيديو المتحرك في واجهة الموقع (Dubai Video Hero) */
-        .video-hero {
-            position: relative;
-            height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-            border-bottom: 1px solid var(--border-gold);
-        }
-
-        .video-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 1;
-            filter: brightness(0.65) contrast(1.1);
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(5,5,5,0.4) 0%, rgba(5,5,5,0.92) 100%);
-            z-index: 2;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            max-width: 850px;
-            padding: 0 1.5rem;
-        }
-
-        .hero-content h2 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            color: var(--gold-light);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-        }
-
-        /* الصفحات المتعددة (Views) */
-        .page-view {
-            display: none;
-            min-height: 75vh;
-            padding: 3rem 1.5rem;
-            max-width: 1250px;
-            margin: auto;
-        }
-
-        .page-view.active {
-            display: block;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* كروت العقارات الفاخرة */
-        .properties-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
-
-        .prop-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-gold);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.35s ease;
-        }
-
-        .prop-card:hover {
-            transform: translateY(-8px);
-            background: var(--bg-card-hover);
-            border-color: var(--gold-primary);
-            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.15);
-        }
-
-        .prop-image {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border-gold);
-        }
-
-        .prop-body {
-            padding: 1.5rem;
-        }
-
-        .prop-badge {
-            background: rgba(212, 175, 55, 0.12);
-            color: var(--gold-primary);
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 700;
-            border: 1px solid var(--border-gold);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
-        .prop-price {
-            font-size: 1.65rem;
-            font-weight: 900;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            margin-bottom: 8px;
-        }
-
-        .prop-price small {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .prop-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #f3f4f6;
-        }
-
-        .prop-location {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .prop-specs {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            text-align: center;
-        }
-
-        .spec-item {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .spec-item b {
-            display: block;
-            color: var(--gold-primary);
-            font-size: 1.05rem;
-            font-family: 'Montserrat', sans-serif;
-            margin-top: 3px;
-        }
-
-        /* صفحة رئيس مجلس الإدارة */
-        .chairman-wrapper {
-            background: var(--bg-card);
-            border: 1px solid var(--border-gold);
-            border-radius: 20px;
-            padding: 3.5rem 2.5rem;
-            max-width: 900px;
-            margin: 2rem auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-        }
-
-        .chairman-avatar-box {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-        }
-
-        .chairman-avatar {
-            width: 210px;
-            height: 210px;
-            border-radius: 50%;
-            border: 3px solid var(--gold-primary);
-            padding: 6px;
-            object-fit: cover;
-            box-shadow: 0 0 35px var(--gold-glow-soft);
-        }
-
-        .chairman-info {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        .chairman-info h2 {
-            font-size: 2.3rem;
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
-            margin-bottom: 5px;
-        }
-
-        .chairman-role {
-            color: var(--gold-primary);
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 1.2rem
+            box-shadow
