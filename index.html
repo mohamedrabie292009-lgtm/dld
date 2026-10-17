@@ -112,4 +112,883 @@
 
         .btn-gold:hover {
             transform: translateY(-2px);
-            box-shadow
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-gold:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 30px #d4af37, 0 0 60px #fae19c !important;
+            filter: brightness(1.2);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* واجهة الفيديو في دبي */
+        .hero-banner {
+            position: relative;
+            height: 70vh;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-gold);
+            background: #000;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            filter: brightness(0.65) contrast(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(5,5,7,0.4) 0%, rgba(5,5,7,0.95) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+            padding: 0 1.5rem;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.9);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            color: var(--gold-light);
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* الصفحات المتعددة (Views) */
+        .page-view {
+            display: none;
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
+            padding: 2.5rem 1.5rem;
+            flex: 1;
+        }
+
+        .page-view.active {
+            display: block;
+        }
+
+        /* شبكة كروت العقارات */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+
+        .prop-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-6px);
+            background: var(--bg-card-hover);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .prop-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .prop-body {
+            padding: 1.5rem;
+        }
+
+        .prop-tag {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid var(--border-gold);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .prop-price {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 6px;
+        }
+
+        .prop-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f3f4f6;
+            margin-bottom: 6px;
+        }
+
+        .prop-location {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .prop-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            text-align: center;
+        }
+
+        .spec-item span {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            display: block;
+        }
+
+        .spec-item b {
+            color: var(--gold);
+            font-size: 1.05rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* صفحة رئيس مجلس الإدارة */
+        .chairman-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 3.5rem 2rem;
+            max-width: 880px;
+            margin: 2rem auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+
+        .avatar-wrap {
+            flex: 1;
+            min-width: 240px;
+            text-align: center;
+        }
+
+        .avatar-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            margin: auto;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--gold);
+            font-family: 'Montserrat';
+            font-weight: bold;
+            box-shadow: 0 0 30px var(--gold-glow);
+        }
+
+        .chairman-content {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .chairman-content h2 {
+            font-size: 2.3rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .chairman-role {
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .chairman-content p {
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* بوابة الأمان */
+        .security-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            max-width: 450px;
+            margin: 4rem auto;
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card span {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: block;
+        }
+
+        .stat-card h4 {
+            font-size: 2rem;
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 5px;
+        }
+
+        /* النماذج والجداول */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: right;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            position: relative;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        label {
+            font-size: 0.85rem;
+            color: #d1d5db;
+        }
+
+        input, select {
+            background: #000;
+            border: 1px solid var(--border-gold);
+            color: #fff;
+            padding: 0.75rem;
+            border-radius: 6px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .dropdown-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #111;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 100;
+            list-style: none;
+            display: none;
+        }
+
+        .dropdown-list li {
+            padding: 8px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #222;
+        }
+
+        .dropdown-list li:hover {
+            background: var(--gold);
+            color: #000;
+            font-weight: bold;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+            border: 1px solid var(--border-gold);
+        }
+
+        .admin-table th, .admin-table td {
+            padding: 12px 14px;
+            text-align: right;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .admin-table th {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+        }
+
+        #map-container {
+            border: 1px solid var(--border-gold);
+            border-radius: 14px;
+            height: 380px;
+            margin-top: 2rem;
+            overflow: hidden;
+        }
+
+        /* فوتر */
+        footer {
+            background: #000;
+            border-top: 1px solid var(--border-gold);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .designer-credit {
+            margin-top: 10px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--gold);
+            font-weight: 800;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <nav>
+        <div class="brand">
+            <h1>DLD MASTER</h1>
+            <span>DUBAI LUXURY PROPERTIES</span>
+        </div>
+        <div class="nav-links">
+            <a class="nav-link active" onclick="switchPage('home')">الرئيسية</a>
+            <a class="nav-link" onclick="switchPage('about')">Chairman (عن المالك)</a>
+            <button class="btn-gold" onclick="switchPage('security')">بوابة الأمان 🔒</button>
+        </div>
+    </nav>
+
+    <!-- الصفحة الرئيسية مع الفيديو -->
+    <section id="page-home" class="page-view active" style="padding: 0; max-width: 100%;">
+        <div class="hero-banner">
+            <!-- فيديو دبي المتحرك المتكرر -->
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-dubai-skyscrapers-at-night-4029-large.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>EXPERIENCE DUBAI LUXURY</h2>
+                <p>استثمر في أرقى العقارات، الفلل والأراضي في إمارة دبي</p>
+                <div style="display: flex; justify-content: center; gap: 15px;">
+                    <button class="btn-gold" onclick="document.getElementById('listingsArea').scrollIntoView({behavior:'smooth'})">استكشف العقارات</button>
+                    <button class="btn-gold" style="background:transparent; color:#fff; border:1px solid var(--gold);" onclick="switchPage('about')">تواصل مع المالك</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="listingsArea" style="max-width: 1250px; margin: 3rem auto; padding: 0 1.5rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 2.2rem; font-family: 'Montserrat';">EXCLUSIVE LISTINGS</h2>
+                <span style="color: var(--gold);">عقارات حصرية مختارة بعناية</span>
+            </div>
+
+            <!-- عرض العقارات للزوار بدون أزرار مسح -->
+            <div id="propertiesGrid" class="properties-grid"></div>
+
+            <!-- خريطة دبي -->
+            <div style="margin-top: 4rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3 style="color: var(--gold);">خريطة مواقع العقارات في دبي</h3>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn-gold" style="padding: 5px 12px; font-size: 0.85rem;" onclick="setMapLayer('2d')">2D Map</button>
+                        <button class="btn-gold" style="padding: 5px 12px; font-size: 0.85rem;" onclick="setMapLayer('3d')">3D Satellite</button>
+                    </div>
+                </div>
+                <div id="map-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- صفحة صاحب الشركة (About Chairman) -->
+    <section id="page-about" class="page-view">
+        <div class="chairman-box">
+            <div class="avatar-wrap">
+                <div class="avatar-circle">MR</div>
+            </div>
+            <div class="chairman-content">
+                <h2>Mahmoud Rabie</h2>
+                <div class="chairman-role">Chairman & Founder of DLD MASTER</div>
+                <p>
+                    يقود <b>Mahmoud Rabie</b> شركة <b>DLD MASTER</b> العقارية لتقديم أفضل الفرص الاستثمارية العقارية في إمارة دبي، متخصصون في المشاريع السكنية والتجارية الكبرى بأعلى درجات المصداقية والاحترافية.
+                </p>
+                <!-- رابط واتساب المباشر -->
+                <a href="https://wa.me/971542955112" target="_blank" class="btn-whatsapp">
+                    تواصل مباشرة عبر WhatsApp: +971 54 295 5112
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- بوابة الأمان (المرحلة 1: باسورد 2009) -->
+    <section id="page-security" class="page-view">
+        <div class="security-card">
+            <h3 style="color: var(--gold); margin-bottom: 10px;">Security Gate Access</h3>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">أدخل تصريح المرور الأول للدخول</p>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <input type="password" id="pass1" placeholder="رمز المرور (2009)">
+            </div>
+            <button class="btn-gold" style="width: 100%;" onclick="checkGate1()">فتح بوابة الأمان</button>
+        </div>
+    </section>
+
+    <!-- لوحة الأمان والتحكم الداخلية (المرحلة 2) -->
+    <section id="page-dashboard" class="page-view">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div>
+                <h2 style="color: var(--gold); font-family: 'Montserrat';">DLD MASTER Control Gate</h2>
+                <span style="color: var(--text-dim);">لوحة الإحصائيات المباشرة وإدارة المحتوى</span>
+            </div>
+            <button class="btn-danger" onclick="logout()">قفل اللوحة 🔒</button>
+        </div>
+
+        <!-- الإحصائيات المباشرة -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span>إجمالي الزيارات للموقع</span>
+                <h4 id="statVisits">0</h4>
+            </div>
+            <div class="stat-card">
+                <span>العقارات المعروضة الحالية</span>
+                <h4 id="statActive">0</h4>
+            </div>
+            <div class="stat-card">
+                <span>العقارات المحذوفة</span>
+                <h4 id="statDeleted">0</h4>
+            </div>
+            <div class="stat-card">
+                <span>إجمالي قيمة المحفظة</span>
+                <h4 id="statValue">0 AED</h4>
+            </div>
+        </div>
+
+        <!-- التحقق الثاني لإضافة/حذف العقارات (20092001) -->
+        <div id="fullAuthBox" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-gold); margin-bottom: 2rem;">
+            <div id="unlockSection" style="text-align: center;">
+                <p style="color: var(--gold-light); margin-bottom: 10px; font-weight: bold;">لتفعيل صلاحيات الإضافة والحذف، يرجى إدخال كلمة مرور الإدارة:</p>
+                <div style="display: inline-flex; gap: 10px;">
+                    <input type="password" id="pass2" placeholder="كلمة المرور (20092001)">
+                    <button class="btn-gold" onclick="checkGate2()">تفعيل الصلاحيات</button>
+                </div>
+            </div>
+
+            <!-- نموذج إضافة عقار (يظهر بعد إدخال الباسورد الثاني) -->
+            <div id="addPropertyForm" style="display: none; margin-top: 1.5rem;">
+                <h3 style="color: var(--gold); margin-bottom: 15px;">إضافة عقار جديد</h3>
+                <form onsubmit="saveProperty(event)">
+                    <div class="form-grid">
+                        <div class="form-group full">
+                            <label>اسم المشروع / العقار:</label>
+                            <input type="text" id="propTitle" required placeholder="مثال: فيلا فاخرة بإطلالة مائية">
+                        </div>
+                        <div class="form-group">
+                            <label>نوع العقار:</label>
+                            <select id="propType">
+                                <option value="شقة فاخرة">شقة فاخرة</option>
+                                <option value="فيلا">فيلا</option>
+                                <option value="أرض">أرض استثمارية</option>
+                                <option value="مطعم">مطعم</option>
+                                <option value="كافيه">كافيه</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>المنطقة في دبي (اكتب أول حرفين):</label>
+                            <input type="text" id="propArea" placeholder="مثال: Do, Ma, Pa..." autocomplete="off" oninput="searchArea(this.value)">
+                            <ul id="areaList" class="dropdown-list"></ul>
+                        </div>
+                        <div class="form-group">
+                            <label>السعر (AED):</label>
+                            <input type="number" id="propPrice" required placeholder="14000000">
+                        </div>
+                        <div class="form-group">
+                            <label>Price Prefix:</label>
+                            <input type="text" id="propPrefix" placeholder="Start from">
+                        </div>
+                        <div class="form-group">
+                            <label>المساحة (Area Size):</label>
+                            <input type="number" id="propAreaSize" placeholder="المساحة">
+                        </div>
+                        <div class="form-group">
+                            <label>غرف النوم (Bedrooms):</label>
+                            <input type="number" id="propBeds" placeholder="عدد الغرف">
+                        </div>
+                        <div class="form-group">
+                            <label>الحمامات (Bathrooms):</label>
+                            <input type="number" id="propBaths" placeholder="عدد الحمامات">
+                        </div>
+                        <div class="form-group full">
+                            <label>رابط الصورة (Image URL):</label>
+                            <input type="url" id="propImage" placeholder="https://images.unsplash.com/...">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-gold" style="width: 100%; margin-top: 15px;">نشر العقار الآن</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- جدول الحذف الداخلي المحمي -->
+        <h3 style="color: #fff; margin-bottom: 10px;">إدارة العقارات وحذفها (محمي)</h3>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>العقار</th>
+                    <th>النوع</th>
+                    <th>المنطقة</th>
+                    <th>السعر</th>
+                    <th>الإجراء</th>
+                </tr>
+            </thead>
+            <tbody id="adminTable"></tbody>
+        </table>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <h3 style="color: #fff; font-family: 'Montserrat';">DLD MASTER REAL ESTATE</h3>
+        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 4px;">Dubai, United Arab Emirates</p>
+        <div class="designer-credit">Designed by Mohamed Rabie</div>
+    </footer>
+
+    <!-- سكربت الخرائط وJavaScript بدون أخطاء -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // 1. منع الكليك اليمين
+        document.addEventListener('contextmenu', e => e.preventDefault());
+
+        // 2. إدارة البيانات والإحصائيات
+        let visits = parseInt(localStorage.getItem('dld_visits') || '1420') + 1;
+        localStorage.setItem('dld_visits', visits);
+
+        let deletedCount = parseInt(localStorage.getItem('dld_deleted_count') || '0');
+
+        const dubaiLocations = [
+            { name: "Downtown Dubai", lat: 25.1972, lng: 55.2744 },
+            { name: "Dubai Marina", lat: 25.0805, lng: 55.1403 },
+            { name: "Palm Jumeirah", lat: 25.1124, lng: 55.1390 },
+            { name: "Business Bay", lat: 25.1864, lng: 55.2639 },
+            { name: "Jumeirah Village Circle (JVC)", lat: 25.0599, lng: 55.2078 },
+            { name: "Dubai Hills Estate", lat: 25.1165, lng: 55.2646 },
+            { name: "Dubai Creek Harbour", lat: 25.1989, lng: 55.3524 }
+        ];
+
+        let defaultProperties = [
+            {
+                id: 1,
+                title: "فيلا الترا مودرن فاخرة بإطلالة بانورامية",
+                type: "فيلا",
+                location: "Palm Jumeirah",
+                price: 14000000,
+                prefix: "Start from",
+                area: 5500,
+                beds: 5,
+                baths: 6,
+                image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80",
+                lat: 25.1124,
+                lng: 55.1390
+            }
+        ];
+
+        let properties = JSON.parse(localStorage.getItem('dld_properties')) || defaultProperties;
+        let isGate1Passed = false;
+        let isGate2Passed = false;
+
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
+            if (pageId === 'security') {
+                if (isGate1Passed) {
+                    document.getElementById('page-dashboard').classList.add('active');
+                } else {
+                    document.getElementById('page-security').classList.add('active');
+                }
+            } else {
+                document.getElementById('page-' + pageId).classList.add('active');
+            }
+
+            if (pageId === 'home' && map) {
+                setTimeout(() => { map.invalidateSize(); }, 200);
+            }
+        }
+
+        // فحص البوابة 1: 2009
+        function checkGate1() {
+            const val = document.getElementById('pass1').value;
+            if (val === '2009') {
+                isGate1Passed = true;
+                document.getElementById('pass1').value = '';
+                document.getElementById('page-security').classList.remove('active');
+                document.getElementById('page-dashboard').classList.add('active');
+                updateStats();
+                renderAdminTable();
+            } else {
+                alert('رمز المرور غير صحيح.');
+            }
+        }
+
+        // فحص البوابة 2: 20092001
+        function checkGate2() {
+            const val = document.getElementById('pass2').value;
+            if (val === '20092001') {
+                isGate2Passed = true;
+                document.getElementById('unlockSection').style.display = 'none';
+                document.getElementById('addPropertyForm').style.display = 'block';
+                renderAdminTable();
+            } else {
+                alert('كلمة مرور الإدارة غير صحيحة!');
+            }
+        }
+
+        function logout() {
+            isGate1Passed = false;
+            isGate2Passed = false;
+            document.getElementById('unlockSection').style.display = 'block';
+            document.getElementById('addPropertyForm').style.display = 'none';
+            switchPage('home');
+        }
+
+        function updateStats() {
+            document.getElementById('statVisits').innerText = visits.toLocaleString();
+            document.getElementById('statActive').innerText = properties.length;
+            document.getElementById('statDeleted').innerText = deletedCount;
+            const total = properties.reduce((a, b) => a + Number(b.price || 0), 0);
+            document.getElementById('statValue').innerText = total.toLocaleString() + ' AED';
+        }
+
+        function searchArea(val) {
+            const list = document.getElementById('areaList');
+            list.innerHTML = '';
+            if (val.trim().length < 2) {
+                list.style.display = 'none';
+                return;
+            }
+            const filtered = dubaiLocations.filter(item => item.name.toLowerCase().includes(val.toLowerCase()));
+            if (filtered.length > 0) {
+                filtered.forEach(loc => {
+                    const li = document.createElement('li');
+                    li.innerText = loc.name;
+                    li.onclick = () => {
+                        document.getElementById('propArea').value = loc.name;
+                        list.style.display = 'none';
+                    };
+                    list.appendChild(li);
+                });
+                list.style.display = 'block';
+            } else {
+                list.style.display = 'none';
+            }
+        }
+
+        function saveProperty(e) {
+            e.preventDefault();
+            if (!isGate2Passed) return;
+
+            const locName = document.getElementById('propArea').value;
+            const match = dubaiLocations.find(l => l.name.toLowerCase() === locName.toLowerCase()) || { lat: 25.2048, lng: 55.2708 };
+
+            const item = {
+                id: Date.now(),
+                title: document.getElementById('propTitle').value,
+                type: document.getElementById('propType').value,
+                location: locName || "Dubai",
+                price: Number(document.getElementById('propPrice').value),
+                prefix: document.getElementById('propPrefix').value,
+                area: document.getElementById('propAreaSize').value || 0,
+                beds: document.getElementById('propBeds').value || 0,
+                baths: document.getElementById('propBaths').value || 0,
+                image: document.getElementById('propImage').value || 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=800&q=80',
+                lat: match.lat,
+                lng: match.lng
+            };
+
+            properties.unshift(item);
+            localStorage.setItem('dld_properties', JSON.stringify(properties));
+            renderCards();
+            renderAdminTable();
+            updateStats();
+            updateMarkers();
+            e.target.reset();
+            alert('تم نشر العقار بنجاح!');
+        }
+
+        function deleteProperty(id) {
+            if (!isGate2Passed) return;
+            if (confirm('هل أنت متأكد من حذف هذا العقار نهائياً؟')) {
+                properties = properties.filter(p => p.id !== id);
+                deletedCount += 1;
+                localStorage.setItem('dld_properties', JSON.stringify(properties));
+                localStorage.setItem('dld_deleted_count', deletedCount);
+                renderCards();
+                renderAdminTable();
+                updateStats();
+                updateMarkers();
+            }
+        }
+
+        function renderCards() {
+            const grid = document.getElementById('propertiesGrid');
+            grid.innerHTML = '';
+            properties.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'prop-card';
+                div.innerHTML = `
+                    <img src="${p.image}" class="prop-img" alt="Luxury Property" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'">
+                    <div class="prop-body">
+                        <span class="prop-tag">${p.type}</span>
+                        <div class="prop-price">${Number(p.price).toLocaleString()} AED</div>
+                        <div class="prop-title">${p.title}</div>
+                        <div class="prop-location">📍 ${p.location}</div>
+                        <div class="prop-specs">
+                            <div class="spec-item"><span>المساحة</span><b>${p.area}</b> Sq Ft</div>
+                            <div class="spec-item"><span>غرف النوم</span><b>${p.beds}</b></div>
+                            <div class="spec-item"><span>الحمامات</span><b>${p.baths}</b></div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        function renderAdminTable() {
+            const tbody = document.getElementById('adminTable');
+            tbody.innerHTML = '';
+            properties.forEach(p => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><b>${p.title}</b></td>
+                    <td>${p.type}</td>
+                    <td>${p.location}</td>
+                    <td>${Number(p.price).toLocaleString()} AED</td>
+                    <td>
+                        ${isGate2Passed ? 
+                          `<button class="btn-danger" onclick="deleteProperty(${p.id})">حذف نهائي 🗑️</button>` : 
+                          `<span style="color:var(--text-dim); font-size:0.8rem;">مقفل</span>`}
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // الخرائط التفاعلية
+        let map, markers = [], currentLayer;
+        const tile2D = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 });
+        const tile3D = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 18 });
+
+        function initMap() {
+            try {
+                map = L.map('map-container').setView([25.1972, 55.2744], 11);
+                currentLayer = tile2D.addTo(map);
+                updateMarkers();
+            } catch (err) {
+                console.error("Map init error: ", err);
+            }
+        }
+
+        function setMapLayer(type) {
+            if (!map) return;
+            map.removeLayer(currentLayer);
+            currentLayer = (type === '3d') ? tile3D.addTo(map) : tile2D.addTo(map);
+        }
+
+        function updateMarkers() {
+            if (!map) return;
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+            properties.forEach(p => {
+                if (p.lat && p.lng) {
+                    const m = L.marker([p.lat, p.lng]).addTo(map);
+                    m.bindPopup(`<b>${p.title}</b><br>${p.location}<br><b>${Number(p.price).toLocaleString()} AED</b>`);
+                    markers.push(m);
+                }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCards();
+            initMap();
+        });
+    </script>
+</body>
+</html>
